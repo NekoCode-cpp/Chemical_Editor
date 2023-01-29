@@ -1,5 +1,5 @@
 ﻿#include "Common.hpp"
-#include "Editor2.hpp"
+#include "Editor.hpp"
 #include "UI.hpp"
 
 void Main()
@@ -11,7 +11,7 @@ void Main()
 
 	App manager;
 
-	manager.add<Editor2>(U"Editor");
+	manager.add<Editor>(U"Editor");
 
 	while (System::Update())
 	{

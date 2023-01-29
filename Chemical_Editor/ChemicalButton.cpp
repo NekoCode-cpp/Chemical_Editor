@@ -8,6 +8,8 @@ void ChemicalButton::update() {
 
 	RectF btn{ pos, chemical_symbol_btn::width,chemical_symbol_btn::height };
 
+
+
 	if (btn.leftClicked()) {
 		is_clicked = not is_clicked;
 		if (is_clicked) {

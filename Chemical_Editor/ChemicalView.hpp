@@ -9,7 +9,7 @@ private:
 	Vec2 pos;
 	Chemical chemical;
 	Array<ValencyPoint> valency_points;
-	bool is_clicked = false;
+	bool is_selected = false;
 	bool is_drag_start = false;
 
 public:

@@ -14,8 +14,13 @@ void ChemicalView::update() {
 
 	const int valency_point_offset = 20;
 	Circle shap{ pos,valency_point_offset };
+
+	if (shap.leftClicked() != true && MouseL.pressed()) {
+		is_selected = false;
+	}
 	if (shap.leftPressed()) {
-		is_drag_start = true;
+		is_selected = not is_selected;
+		is_drag_start = not is_drag_start;
 	}
 	if (is_drag_start) {
 		pos = Cursor::Pos();
@@ -23,9 +28,11 @@ void ChemicalView::update() {
 	if (is_drag_start && MouseL.pressed() == false) {
 		is_drag_start = false;
 	}
+	/*
 	for (auto& valency_point : valency_points) {
 		valency_point.update();
 	}
+	*/
 }
 
 void ChemicalView::draw() const {
@@ -40,6 +47,10 @@ void ChemicalView::draw() const {
 	Circle{ pos,valency_point_offset }.draw(symbol_color);
 	FontAsset(U"Symbol")(symbol).drawAt(pos, Palette::White);
 
+	if (is_selected) {
+		Circle{ pos,valency_point_offset }.drawFrame(1.5,0,Palette::Gray);
+	}
+	/*
 	for (const auto& valency_point : valency_points) {
 
 		const double angle = valency_point.get_valency_index() * angle_step;
@@ -48,4 +59,5 @@ void ChemicalView::draw() const {
 
 		valency_point.draw(valency_point_pos);
 	}
+	*/
 }

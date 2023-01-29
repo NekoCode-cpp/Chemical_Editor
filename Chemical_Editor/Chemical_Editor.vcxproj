@@ -116,6 +116,7 @@
     <ClCompile Include="Chemical.cpp" />
     <ClCompile Include="ChemicalButton.cpp" />
     <ClCompile Include="ChemicalView.cpp" />
+    <ClCompile Include="Editor.cpp" />
     <ClCompile Include="Joint.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -322,8 +323,7 @@
     <ClInclude Include="ChemicalButton.hpp" />
     <ClInclude Include="ChemicalView.hpp" />
     <ClInclude Include="Common.hpp" />
-    <ClInclude Include="Editor2.cpp" />
-    <ClInclude Include="Editor2.hpp" />
+    <ClInclude Include="Editor.hpp" />
     <ClInclude Include="Joint.hpp" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="UI.hpp" />
