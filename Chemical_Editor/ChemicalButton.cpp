@@ -8,18 +8,15 @@ void ChemicalButton::update() {
 
 	RectF btn{ pos, chemical_symbol_btn::width,chemical_symbol_btn::height };
 
-
-
-	if (btn.leftClicked()) {
-		is_clicked = not is_clicked;
-		if (is_clicked) {
-			click_time = Scene::FrameCount();
-		}
+	if (btn.leftClicked() != true && MouseL.pressed() && Cursor::Pos().x > (Scene::Width() - chemical_symbol_btn::width)) {
+		btn_is_selected = false;
 	}
-
+	if (btn.leftPressed()) {
+		btn_is_selected = not btn_is_selected;
+	}
 }
 
-void ChemicalButton::draw(bool is_selected) const {
+void ChemicalButton::draw() const {
 
 	const String symbol = chemical.get_symbol();
 	const Color symbol_color = chemical.get_symbol_color();
@@ -30,17 +27,14 @@ void ChemicalButton::draw(bool is_selected) const {
 
 	btn.draw(btn_background).drawFrame(1, Palette::Black);
 
-	if (is_selected) {
+	if (btn_is_selected) {
 		btn.drawFrame(5, 0, Palette::Orange);
 	}
 	FontAsset(U"Symbol")(symbol).drawAt(symbol_pos, symbol_color);
 }
-int ChemicalButton::get_click_time() const {
-	return is_clicked ? click_time : -1;
-}
 bool ChemicalButton::is_selected() const {
-	return is_clicked;
+	return btn_is_selected;
 }
-void ChemicalButton::reset_clicked() {
-	is_clicked = false;
+void ChemicalButton::set_selected(){
+	btn_is_selected = true;
 }

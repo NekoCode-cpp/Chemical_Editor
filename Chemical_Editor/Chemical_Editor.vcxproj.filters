@@ -151,6 +151,9 @@
     <Filter Include="Source Files\Joint">
       <UniqueIdentifier>{4887cab3-36c9-4f57-8e95-664b7f29ceeb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\CustomButton">
+      <UniqueIdentifier>{3e300b59-5024-429c-93b8-43f9e46a2e39}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -176,6 +179,9 @@
     </ClCompile>
     <ClCompile Include="Editor.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomButton.cpp">
+      <Filter>Source Files\CustomButton</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -832,6 +838,12 @@
     </ClInclude>
     <ClInclude Include="Joint.hpp">
       <Filter>Source Files\Joint</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomButton.hpp">
+      <Filter>Source Files\CustomButton</Filter>
+    </ClInclude>
+    <ClInclude Include="Bond.hpp">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

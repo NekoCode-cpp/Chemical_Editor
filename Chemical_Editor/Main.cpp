@@ -7,7 +7,8 @@ void Main()
 	Scene::SetBackground(UI::background_color);
 
 	FontAsset::Register(U"font30", 30);
-	FontAsset::Register(U"Symbol", 35, Typeface::Heavy);
+	FontAsset::Register(U"custom_btn_font", 20);
+	FontAsset::Register(U"Symbol", 40, Typeface::Heavy);
 
 	App manager;
 

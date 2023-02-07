@@ -11,20 +11,18 @@ namespace chemical_symbol_btn {
 class ChemicalButton {
 private:
 	Vec2 pos;
-	int click_time = -1;
 	Chemical chemical;
 	bool is_clicked = false;
+	bool btn_is_selected = false;
 public:
 
 	ChemicalButton(const Chemical chemical, const Vec2 pos);
 
 	void update();
 
-	void draw(bool is_selected) const;
+	void draw() const;
 
 	bool is_selected() const;
 
-	int get_click_time() const;
-
-	void reset_clicked();
+	void set_selected();
 };
